@@ -10,6 +10,7 @@ import TrackDetails from '../TrackDetails/TrackDetails';
 import SeekBar from '../SeekBar/SeekBar';
 import Controls from '../Controls/Controls';
 import Video from 'react-native-video';
+import Ax from '../../hoc/Ax';
 
 export default class Player extends Component {
   constructor(props) {
@@ -96,11 +97,20 @@ export default class Player extends Component {
     );
 
     return (
+      <Ax>
       <View style={styles.container}>
         <StatusBar hidden={true} />
-        <Header message="Playing From Charts" />
+
+        <View style={styles.header}>
+           <Header title={track.title} artist={track.artist} />
+        </View>
+
+        <View style={styles.songPhoto}>
         <AlbumArt url={track.albumArtUrl} />
-        <TrackDetails title={track.title} artist={track.artist} />
+        </View>
+
+       <View style={styles.otherParts}>
+
         <SeekBar
           onSeek={this.seek.bind(this)}
           trackLength={this.state.totalLength}
@@ -117,8 +127,14 @@ export default class Player extends Component {
           onBack={this.onBack.bind(this)}
           onForward={this.onForward.bind(this)}
           paused={this.state.paused}/>
-        {video}
+
       </View>
+      </View>
+
+      {video}
+
+      </Ax>
+
     );
   }
 }
@@ -126,7 +142,21 @@ export default class Player extends Component {
 const styles = {
   container: {
     flex: 1,
-    backgroundColor: 'rgb(4,4,4)',
+    backgroundColor: 'rgb(255, 255, 255)',
+  },
+  header: {
+     backgroundColor: 'rgb(134, 18, 158)',
+     marginBottom: 5,
+ },
+ songPhoto : {
+    height: "55%",
+    marginTop: 40,
+},
+  otherParts: {
+    flex: 1,
+    backgroundColor: 'rgb(134, 18, 158)',
+    marginTop: 15,
+    padding: 5,
   },
   audioElement: {
     height: 0,

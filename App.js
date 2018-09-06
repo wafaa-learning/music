@@ -5,16 +5,16 @@ import Player from './src/component/Player/Player';
 
 export const TRACKS = [
   {
-    title: 'Stressed Out',
-    artist: 'Twenty One Pilots',
-    albumArtUrl: "http://36.media.tumblr.com/14e9a12cd4dca7a3c3c4fe178b607d27/tumblr_nlott6SmIh1ta3rfmo1_1280.jpg",
-    audioUrl: "http://russprince.com/hobbies/files/13%20Beethoven%20-%20Fur%20Elise.mp3",
+    title: 'Thanksgiving',
+    artist: 'Winston',
+    albumArtUrl: "https://78.media.tumblr.com/e0cb83dc149ecfd2e8b39d0e2827aabe/tumblr_p6dy8ajAyR1tom83ho1_640.jpg",
+    audioUrl: "http://russprince.com/hobbies/files/02%20Winston%20-%20Thanksgiving.mp3",
   },
   {
-    title: 'Love Yourself',
-    artist: 'Justin Bieber',
-    albumArtUrl: "http://arrestedmotion.com/wp-content/uploads/2015/10/JB_Purpose-digital-deluxe-album-cover_lr.jpg",
-    audioUrl: 'http://oranslectio.files.wordpress.com/2013/12/39-15-mozart_-adagio-fugue-in-c-minor-k-546.mp3',
+    title: 'Minute Waltz',
+    artist: 'Chopin',
+    albumArtUrl: "https://78.media.tumblr.com/8cc498ee34ff5694402cb2376f5c617b/tumblr_p64xvnsrAP1vwvx0xo1_1280.jpg",
+    audioUrl: 'http://russprince.com/hobbies/files/09%20Chopin%20-%20Minute%20Waltz.mp3',
   },
   {
     title: 'Hotline Bling',

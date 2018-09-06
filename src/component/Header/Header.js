@@ -9,7 +9,8 @@ import {
 } from 'react-native';
 
 const Header = ({
-  message,
+  title,
+  artist,
   onDownPress,
   onQueuePress,
   onMessagePress,
@@ -19,8 +20,10 @@ const Header = ({
         <Image style={styles.button}
           source={require('../../../img/baseline_expand_more_white_18dp.png')} />
       </TouchableOpacity>
-      <Text onPress={onMessagePress}
-        style={styles.message}>{message.toUpperCase()}</Text>
+      <View style={styles.detailsWrapper}>
+         <Text style={styles.title} >{title}</Text>
+         <Text style={styles.artist} >{artist}</Text>
+      </View>
       <TouchableOpacity onPress={onQueuePress}>
         <Image style={styles.button}
           source={require('../../../img/baseline_queue_music_white_18dp.png')} />
@@ -38,12 +41,24 @@ const styles = StyleSheet.create({
     paddingRight: 12,
     flexDirection: 'row',
   },
-  message: {
-    flex: 1,
-    textAlign: 'center',
-    color: 'rgba(255, 255, 255, 0.72)',
+  title: {
+     flex: 1,
+    fontSize: 16,
     fontWeight: 'bold',
-    fontSize: 10,
+    color: 'white',
+    textAlign: 'center',
+  },
+  artist: {
+     flex: 1,
+   textAlign: 'center',
+    color: 'rgba(255, 255, 255, 0.72)',
+    fontSize: 12,
+    marginTop: 4,
+  },
+  detailsWrapper: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
   },
   button: {
     opacity: 0.72
