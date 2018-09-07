@@ -13,6 +13,7 @@ import Video from 'react-native-video';
 import Ax from '../../hoc/Ax';
 
 export default class Player extends Component {
+
   constructor(props) {
     super(props);
 
@@ -78,8 +79,6 @@ export default class Player extends Component {
     }
   }
 
-
-
   render() {
     const track = this.props.tracks[this.state.selectedTrack];
     const video = this.state.isChanging ? null : (
@@ -102,7 +101,7 @@ export default class Player extends Component {
         <StatusBar hidden={true} />
 
         <View style={styles.header}>
-           <Header title={track.title} artist={track.artist} />
+           <Header title={track.title} artist={track.artist} backe={this.props.back}/>
         </View>
 
         <View style={styles.songPhoto}>

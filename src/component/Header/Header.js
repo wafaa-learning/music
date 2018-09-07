@@ -14,9 +14,10 @@ const Header = ({
   onDownPress,
   onQueuePress,
   onMessagePress,
+  backe
 }) => (
    <View style={styles.container}>
-      <TouchableOpacity onPress={onDownPress}>
+      <TouchableOpacity onPress={backe}>
         <Image style={styles.button}
           source={require('../../../img/baseline_expand_more_white_18dp.png')} />
       </TouchableOpacity>
@@ -24,10 +25,7 @@ const Header = ({
          <Text style={styles.title} >{title}</Text>
          <Text style={styles.artist} >{artist}</Text>
       </View>
-      <TouchableOpacity onPress={onQueuePress}>
-        <Image style={styles.button}
-          source={require('../../../img/baseline_queue_music_white_18dp.png')} />
-      </TouchableOpacity>
+
     </View>
 );
 
