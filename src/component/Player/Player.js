@@ -10,6 +10,7 @@ import TrackDetails from '../TrackDetails/TrackDetails';
 import SeekBar from '../SeekBar/SeekBar';
 import Controls from '../Controls/Controls';
 import Video from 'react-native-video';
+import {Songs} from '../../containers/Songs/Songs';
 import Ax from '../../hoc/Ax';
 
 export default class Player extends Component {
@@ -66,7 +67,7 @@ export default class Player extends Component {
   }
 
   onForward() {
-    if (this.state.selectedTrack < this.props.tracks.length - 1) {
+    if (this.state.selectedTrack < Songs.length - 1) {
       this.refs.audioElement && this.refs.audioElement.seek(0);
       this.setState({ isChanging: true });
       setTimeout(() => this.setState({
@@ -79,8 +80,9 @@ export default class Player extends Component {
     }
   }
 
+
   render() {
-    const track = this.props.tracks[this.state.selectedTrack];
+    const track = Songs[this.state.selectedTrack];
     const video = this.state.isChanging ? null : (
       <Video source={{uri: track.audioUrl}} // Can be a URL or a local file.
         ref="audioElement"
@@ -101,11 +103,11 @@ export default class Player extends Component {
         <StatusBar hidden={true} />
 
         <View style={styles.header}>
-           <Header title={track.title} artist={track.artist} backe={this.props.back}/>
+           <Header title={track.name} artist={track.artist} backe={this.props.back}/>
         </View>
 
         <View style={styles.songPhoto}>
-        <AlbumArt url={track.albumArtUrl} />
+        <AlbumArt url={track.image} />
         </View>
 
        <View style={styles.otherParts}>
@@ -119,7 +121,7 @@ export default class Player extends Component {
           onPressRepeat={() => this.setState({repeatOn : !this.state.repeatOn})}
           repeatOn={this.state.repeatOn}
           shuffleOn={this.state.shuffleOn}
-          forwardDisabled={this.state.selectedTrack === this.props.tracks.length - 1}
+          forwardDisabled={this.state.selectedTrack === Songs.length - 1}
           onPressShuffle={() => this.setState({shuffleOn: !this.state.shuffleOn})}
           onPressPlay={() => this.setState({paused: false})}
           onPressPause={() => this.setState({paused: true})}
