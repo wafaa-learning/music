@@ -19,10 +19,10 @@ export default class Player extends Component {
     super(props);
 
     this.state = {
-      paused: true,
+      paused: false,
       totalLength: 1,
       currentPosition: 0,
-      selectedTrack: 0,
+      selectedTrack: this.props.selectedSong.number,
       repeatOn: false,
       shuffleOn: false,
     };
@@ -103,7 +103,7 @@ export default class Player extends Component {
         <StatusBar hidden={true} />
 
         <View style={styles.header}>
-           <Header title={track.name} artist={track.artist} backe={this.props.back}/>
+           <Header title={track.name} artist={track.artist} backe={this.props.onClicked}/>
         </View>
 
         <View style={styles.songPhoto}>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import getTheme from '../../../native-base-theme/components';
 import material from '../../../native-base-theme/variables/platform';
 import TracksSongs from '../TracksSongs/TracksSongs';
+import {Songs} from '../Songs/Songs';
 import { Icon, Badge, StyleProvider, Container, Header, Content, Footer, FooterTab, Button, Text } from 'native-base';
 
 
@@ -57,31 +58,31 @@ export default class FooterTabsBadgeExample extends Component {
             <Button badge vertical
             active={this.state.selectedTab==='Songs'}
             onPress={() => this.setState({selectedTab: 'Songs'})}>
-              <Badge><Text>2</Text></Badge>
-              <Icon name="apps" />
+              <Badge><Text>{Songs.length}</Text></Badge>
+              <Icon name="musical-notes" />
               <Text>My Music</Text>
             </Button>
 
             <Button active badge vertical
             active={this.state.selectedTab==='Albums'}
             onPress={() => this.setState({selectedTab: 'Albums'})}>
-            <Badge ><Text>51</Text></Badge>
-              <Icon name="camera" />
+            <Badge ><Text>0</Text></Badge>
+              <Icon name="albums" />
               <Text>Albums</Text>
             </Button>
 
             <Button active badge vertical
             active={this.state.selectedTab==='Favorite'}
             onPress={() => this.setState({selectedTab: 'Favorite'})}>
-            <Badge ><Text>13</Text></Badge>
-              <Icon active name="navigate" />
+            <Badge ><Text>0</Text></Badge>
+              <Icon active name="star-half"/>
               <Text>Favorite</Text>
             </Button>
 
             <Button vertical
             active={this.state.selectedTab==='Search'}
             onPress={() => this.setState({selectedTab: 'Search'})}>
-              <Icon name="person" />
+              <Icon name="search" />
               <Text>Search</Text>
             </Button>
 

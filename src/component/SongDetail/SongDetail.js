@@ -4,9 +4,10 @@ import { Modal, View, Image, Text, Button, StyleSheet } from "react-native";
 
 const SongDetail = props => {
   let modalContent = null;
-
   modalContent = (
-      <Player />
+      <Player
+      onClicked={props.onModalClosed}
+      selectedSong={props.selectedSong}/>
     );
 
   return (

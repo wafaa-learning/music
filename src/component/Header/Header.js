@@ -7,6 +7,7 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
+import {Icon} from 'native-base';
 
 const Header = ({
   title,
@@ -18,8 +19,7 @@ const Header = ({
 }) => (
    <View style={styles.container}>
       <TouchableOpacity onPress={backe}>
-        <Image style={styles.button}
-          source={require('../../../img/baseline_expand_more_white_18dp.png')} />
+        <Icon name="arrow-round-back" style={{ color: "#ffffff" }}/>
       </TouchableOpacity>
       <View style={styles.detailsWrapper}>
          <Text style={styles.title} >{title}</Text>

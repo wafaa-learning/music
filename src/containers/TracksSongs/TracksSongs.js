@@ -31,12 +31,13 @@ export default class TracksSongs extends Component {
    static navigationOptions = {
       header: null,
    };
-   back = () => this.props.navigation.goBack();
+
   render() {
     return(
       <View style={styles.container}>
       <SongDetail
           selectedSong={this.state.selectedSong}
+          onModalClosed={this.modalClosedHandler}
         />
         <SongsList
           songs={Songs}

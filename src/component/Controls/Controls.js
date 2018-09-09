@@ -7,6 +7,7 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
+import {Icon} from 'native-base';
 
 const Controls = ({
   paused,
@@ -22,36 +23,33 @@ const Controls = ({
 }) => (
   <View style={styles.container}>
     <TouchableOpacity activeOpacity={0.0} onPress={onPressShuffle}>
-      <Image style={[styles.secondaryControl, shuffleOn ? [] : styles.off]}
-        source={require('../../../img/baseline_shuffle_white_18dp.png')}/>
+      <Icon  name="shuffle" style={[styles.secondaryControl, shuffleOn ? [] : styles.off]} />
     </TouchableOpacity>
     <View style={{width: 40}} />
     <TouchableOpacity onPress={onBack}>
-      <Image source={require('../../../img/baseline_skip_previous_white_18dp.png')}/>
+      <Icon name="skip-backward" style={{ color: "#ffffff" }}/>
     </TouchableOpacity>
     <View style={{width: 20}} />
     {!paused ?
       <TouchableOpacity onPress={onPressPause}>
         <View style={styles.playButton}>
-          <Image source={require('../../../img/baseline_pause_circle_outline_white_18dp.png')}/>
+          <Icon name="pause" style={{ color: "#ffffff" }}/>
         </View>
       </TouchableOpacity> :
       <TouchableOpacity onPress={onPressPlay}>
         <View style={styles.playButton}>
-          <Image source={require('../../../img/baseline_play_circle_outline_white_18dp.png')}/>
+          <Icon name="play" style={{ color: "#ffffff" }}/>
         </View>
       </TouchableOpacity>
     }
     <View style={{width: 20}} />
-    <TouchableOpacity onPress={onForward}
-      disabled={forwardDisabled}>
-      <Image style={[forwardDisabled && {opacity: 0.3}]}
-        source={require('../../../img/baseline_skip_next_white_18dp.png')}/>
+    <TouchableOpacity onPress={onForward}>
+      <Icon name="skip-forward" style={{ color: "#ffffff" }}/>
     </TouchableOpacity>
     <View style={{width: 40}} />
     <TouchableOpacity activeOpacity={0.0} onPress={onPressRepeat}>
-      <Image style={[styles.secondaryControl, repeatOn ? [] : styles.off]}
-        source={require('../../../img/baseline_repeat_white_18dp.png')}/>
+      <Icon style={[styles.secondaryControl, repeatOn ? [] : styles.off]}
+        name="repeat"/>
     </TouchableOpacity>
   </View>
 );
@@ -75,8 +73,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   secondaryControl: {
-    height: 18,
-    width: 18,
+
+    color: "#ffffff"
   },
   off: {
     opacity: 0.30,
