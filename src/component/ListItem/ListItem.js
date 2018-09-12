@@ -3,26 +3,27 @@ import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import {Icon} from 'native-base';
 import Ax from "../../hoc/Ax";
 
-const listItem = props => (
-
-
+const listItem = (props) => {
+   return (
     <View style={styles.listItem}>
     <TouchableOpacity onPress={props.onItemPressed} style={styles.music}>
       <Image resizeMode="cover" source={{uri: props.songImage}} style={styles.songImage} />
       <Text style={styles.textItem}>{props.songName}</Text>
        </TouchableOpacity>
-   <TouchableOpacity onPress={props.onItemPressed} >
-      <Icon name="star" style={{color : "#FFC300"}}/>
+   <TouchableOpacity onPress={props.onPress} >
+   <Icon style={[props.favo ? styles.secondary : styles.off]}
+     name="star"/>
       </TouchableOpacity>
     </View>
-
-
-
-
-
 );
 
+};
+
 const styles = StyleSheet.create({
+   secondary: {
+
+     color: "#FFC300"
+   },
   listItem: {
     width: "100%",
     marginBottom: 5,

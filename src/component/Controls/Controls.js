@@ -20,7 +20,8 @@ const Controls = ({
   onPressShuffle,
   onPressRepeat,
   forwardDisabled,
-}) => (
+}) => {
+   return(
   <View style={styles.container}>
     <TouchableOpacity activeOpacity={0.0} onPress={onPressShuffle}>
       <Icon  name="shuffle" style={[styles.secondaryControl, shuffleOn ? [] : styles.off]} />
@@ -53,6 +54,7 @@ const Controls = ({
     </TouchableOpacity>
   </View>
 );
+};
 
 export default Controls;
 

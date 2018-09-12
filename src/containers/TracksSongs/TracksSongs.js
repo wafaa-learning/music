@@ -8,7 +8,7 @@ import { StyleSheet, View } from "react-native";
 
 export default class TracksSongs extends Component {
    state = {
-    selectedSong: null
+    selectedSong: null,
   };
 
 
@@ -28,11 +28,13 @@ export default class TracksSongs extends Component {
     });
   };
 
-   static navigationOptions = {
-      header: null,
+   onFavHandler = (number) => {
+      Songs[number].fav =!Songs[number].fav;
+      this.forceUpdate();
    };
 
   render() {
+
     return(
       <View style={styles.container}>
       <SongDetail
@@ -40,6 +42,7 @@ export default class TracksSongs extends Component {
           onModalClosed={this.modalClosedHandler}
         />
         <SongsList
+         onPressFav={this.onFavHandler}
           songs={Songs}
           onItemSelected={this.songSelectedHandler}
         />

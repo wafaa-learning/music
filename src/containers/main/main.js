@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import getTheme from '../../../native-base-theme/components';
 import material from '../../../native-base-theme/variables/platform';
 import TracksSongs from '../TracksSongs/TracksSongs';
+import Fav from '../fav/fav'
 import {Songs} from '../Songs/Songs';
 import { Icon, Badge, StyleProvider, Container, Header, Content, Footer, FooterTab, Button, Text } from 'native-base';
 
@@ -30,7 +31,7 @@ export default class FooterTabsBadgeExample extends Component {
         break;
       case 'Favorite':
         return (
-           <Text>Favorite</Text>
+           <Fav />
         );
         break;
 

@@ -17,5 +17,4 @@ export default class App extends Component {
 }
 const AppStackNavigator = createStackNavigator ({
    Home: Main,
-   Players: Player,
 })

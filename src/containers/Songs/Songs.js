@@ -1,7 +1,8 @@
 import React from 'react';
 
-export const Songs = [
+export var Songs = [
  {
+    fav:false,
      key: (Math.random()).toString(),
      number: 0,
     name: 'Thanksgiving',
@@ -10,6 +11,7 @@ export const Songs = [
     audioUrl: "http://russprince.com/hobbies/files/02%20Winston%20-%20Thanksgiving.mp3",
  },
  {
+    fav: true,
      key: (Math.random()).toString(),
      number:1,
     name: 'Minute Waltz',
@@ -18,6 +20,7 @@ export const Songs = [
     audioUrl: 'http://russprince.com/hobbies/files/09%20Chopin%20-%20Minute%20Waltz.mp3',
  },
  {
+    fav: false,
      key: (Math.random()).toString(),
     name: 'Hotline Bling',
     number:2,
