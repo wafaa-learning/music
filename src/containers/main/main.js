@@ -6,18 +6,34 @@ import Fav from '../fav/fav'
 import {Songs} from '../Songs/Songs';
 import { Icon, Badge, StyleProvider, Container, Header, Content, Footer, FooterTab, Button, Text } from 'native-base';
 
-
+var numberOfFav = 0;
 export default class FooterTabsBadgeExample extends Component {
 
    state = {
      selectedTab: 'Songs'
    };
 
+   componentWillMount(){
+     this.numFav();
+ };
+
+
+   numFav (){
+      numberOfFav = 0;
+      for(var i =0 ;i<Songs.length ;i++){
+      if(Songs[i].fav === true){
+         numberOfFav = numberOfFav +1  ;
+      }
+   }
+
+};
+
    static navigationOptions = {
       header: null,
    };
 
    renderSelectedTab () {
+      this.numFav();
     switch (this.state.selectedTab) {
       case 'Songs':
         return (
@@ -75,7 +91,7 @@ export default class FooterTabsBadgeExample extends Component {
             <Button active badge vertical
             active={this.state.selectedTab==='Favorite'}
             onPress={() => this.setState({selectedTab: 'Favorite'})}>
-            <Badge ><Text>0</Text></Badge>
+            <Badge ><Text>{numberOfFav}</Text></Badge>
               <Icon active name="star-half"/>
               <Text>Favorite</Text>
             </Button>

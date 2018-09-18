@@ -11,7 +11,7 @@ export var Songs = [
     audioUrl: "http://russprince.com/hobbies/files/02%20Winston%20-%20Thanksgiving.mp3",
  },
  {
-    fav: true,
+    fav: false,
      key: (Math.random()).toString(),
      number:1,
     name: 'Minute Waltz',
